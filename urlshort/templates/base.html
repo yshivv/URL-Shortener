@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet"
+      href="{{ url_for('static', filename='bootstrap.min.css') }}">
+
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <title>{% block title %}{% endblock %}</title>
+
+    <style>
+
+
+      @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600&display=swap');
+
+      * {
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+}
+
+*::selection {
+    background: var(--yellow);
+    color: #333;
+}
+
+html {
+    font-size: 88.5%;
+    overflow-x: hidden;
+}
+
+html::-webkit-scrollbar {
+    width: 1.4rem;
+}
+
+html::-webkit-scrollbar-track {
+    background: #222;
+}
+
+html::-webkit-scrollbar-thumb {
+    background: var(--yellow);
+}
+
+body {
+    background: #111;
+    overflow-x: hidden;
+}
+
+.navbar {
+  width: 80%;
+  margin: 0 auto;
+  border-radius: 10px; 
+  padding: 10px; 
+
+}
+
+
+    body.light {
+      background: linear-gradient(45deg, #ECE9E6, #F4F2F0);
+      color: #333333;
+    }
+
+    body.dark {
+      background: linear-gradient(45deg, #222222, #000000);
+      /* Update with your preferred background colors */
+      font-family: 'Nunito', sans-serif;
+      color: #FFFFFF;
+    }
+
+    .navbar-dark .navbar-nav .nav-link {
+      color: #FFFFFF; /* Update with your preferred navbar link color */
+    }
+
+    .navbar-dark .navbar-nav .nav-link:hover {
+      color: #CCCCCC; /* Update with your preferred navbar link hover color */
+    }
+
+    .my-5 {
+      margin-top: 3rem !important;
+      margin-bottom: 3rem !important;
+    }
+
+    .card {
+      border: none;
+      border-radius: 0.5rem;
+    }
+
+    .card-header {
+      border-radius: 0.5rem 0.5rem 0 0;
+      background-color: #F26419; /* Update with your preferred header background color */
+      color: #FFFFFF; /* Update with your preferred header text color */
+      
+    }
+
+    .card-body {
+      padding: 2rem;
+      background-color: #FFEE93; /* Update with your preferred body background color */
+      color: #333333; /* Update with your preferred body text color */
+      border-radius: 10px;
+    }
+
+    .form-control {
+      border-radius: 0.25rem;
+      background-color: #FFFFFF; /* Update with your preferred input background color */
+      color: #333333; /* Update with your preferred input text color */
+    }
+
+    .btn-outline-primary {
+      color: #F26419;
+      border-color: #F26419;
+    }
+
+    .btn-outline-primary:hover {
+      background-color: #F26419;
+      color: #FFFFFF;
+    }
+
+    .btn-outline-secondary {
+      color: #6c757d;
+      border-color: #6c757d;
+    }
+
+    .btn-outline-secondary:hover {
+      background-color: #6c757d;
+      color: #ffffff;
+    }
+
+    .btn-group {
+      margin-left: 10px;
+    }
+
+    .btn {
+    padding: .7rem 3rem;
+    background: #333;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 1rem;
+    font-size: 1rem;
+    border-radius: 5rem;
+}
+
+.btn i {
+    padding: 0 .5rem;
+    font-size: 1rem;
+   
+}
+
+.btn:hover {
+    background: var(--yellow);
+}
+
+
+
+
+  </style>
+
+  </head>
+
+  <body class="dark">
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark ">
+      <a class="navbar-brand" href="{{ url_for('urlshort.home') }}">URL
+        Shortener</a>
+      <button class="navbar-toggler" type="btn" data-toggle="collapse"
+        data-target="#navbarCollapse"
+        aria-controls="navbarCollapse" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse " id="navbarCollapse">
+
+        <div class="btn-group ml-auto" role="group">
+          <a class="nav-link btn btn-info"
+            href="{{ url_for('urlshort.session_api') }}">API</a>
+          <a class="nav-link btn btn-success"
+            href="{{ url_for('urlshort.home') }}">New URL</a>
+        </div>
+
+        <div class="btn-group" role="group" aria-label="Theme">
+          <button id="theme-dark" type="btn"
+            class="btn btn-dark">Dark</button>
+          <button id="theme-light" type="btn"
+            class="btn btn-light">Light</button>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container my-5">
+      {% for message in get_flashed_messages() %}
+      <div class="container text-center">
+        <div class="p-3 mb-2 bg-danger text-white rounded-lg">{{ message }}</div>
+      </div>
+      <br>
+      {% endfor %}
+
+      {% block main %}{% endblock %}
+    </div>
+
+    <footer class="footer mt-auto py-3 textinfo">
+      <div class="container text-center">
+        <span class="text-muted">Made by Shivpal Yadav <br></span>
+
+        <a href="https://www.linkedin.com/in/yshivv/"><button class="btn">
+            <i
+              class="fab fa-linkedin"></i></button></a>
+
+        <a href="https://github.com/yshivv"><button class="btn"> <i
+              class="fab fa-github"></i></button></a>
+
+        <a href="https://twitter.com/shhiwy"><button class="btn"> <i
+              class="fab fa-twitter"></i></button></a>
+      </div>
+    </footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="{{ url_for('static', filename='jquery-3.3.1.slim.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='popper.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='bootstrap.min.js') }}"></script>
+    <script>
+    // Theme switcher functionality
+    const themeDarkButton = document.getElementById('theme-dark');
+    const themeLightButton = document.getElementById('theme-light');
+    const body = document.querySelector('body');
+
+    themeDarkButton.addEventListener('click', function() {
+      body.classList.add('dark');
+      body.classList.remove('light');
+    });
+
+    themeLightButton.addEventListener('click', function() {
+      body.classList.remove('dark');
+      body.classList.add('light');
+    });
+  </script>
+
+  </body>
+
+</html>
