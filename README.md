@@ -3,48 +3,12 @@
 
 URL Shortener is a simple web application built with Flask that allows users to shorten URLs and manage their shortened links. It provides a user-friendly interface for creating short URLs for websites or uploading files. Additionally, it offers an API for programmatically interacting with the URL shortening functionality.
 
-![Image 1](img/image1.png) ![Image 2](img/image2.png) ![Image 3](img/image3.png) ![Image 4](img/image4.png)
-
-
-
-<!-- If you want to display the images in a single row -->
 <div align="center">
-  <img src="img/image1.png" alt="Image 1" width="30%">
-  <img src="img/image2.png" alt="Image 2" width="30%">
-  <img src="img/image3.png" alt="Image 3" width="30%">
-  <img src="img/image3.png" alt="Image 3" width="30%">
-  <img src="img/image4.png" alt="Image 4" width="30%">
-
+  <img src="img/image1.png" alt="Homepage-URL-Shortener" class="img-thumbnail shadow p-3 mb-5 bg-white rounded">
+  <img src="img/image2.png" alt="Your-URL Dark" class="img-thumbnail shadow p-3 mb-5 bg-white rounded">
+  <img src="img/image3.png" alt="Your-URL Light" class="img-thumbnail shadow p-3 mb-5 bg-white rounded">
+  <img src="img/image4.png" alt="Homepage-URL-Shortener Light" class="img-thumbnail shadow p-3 mb-5 bg-white rounded">
 </div>
-
-<!-- If you want to display the images in two columns -->
-<div align="center">
-  <img src="img/image1.png" alt="Image 1" width="45%">
-  <img src="img/image2.png" alt="Image 2" width="45%">
-</div>
-<div align="center">
-  <img src="img/image3.png" alt="Image 3" width="45%">
-</div>
-<div align="center">
-  <img src="img/image4.png" alt="Image 4" width="45%">
-</div>
-
-## Installation
-...
-In the above example, replace "path/to/image1.jpg", "path/to/image2.jpg", and "path/to/image3.jpg" with the actual paths or URLs of your images. Adjust the width attribute to control the size of the images.
-
-The first line with exclamation marks (!) is the basic markdown syntax for adding images. This will display the images one after another in a row.
-
-The HTML <div> element with the align="center" attribute is used to center align the images. Inside the <div>, each image is represented by an <img> tag with the appropriate src (image path) and alt (alternative text) attributes. The width attribute is set to define the size of the images.
-
-Choose either the "single row" or "two columns" section based on your preference, and place it in the appropriate location in your README file.
-
-
-
-
-
-
-
 
 ## Installation
 
